@@ -351,7 +351,7 @@ Axis.prototype.getPlotBandPath = function (from, to) {
 		if (path.toString() === toPath.toString()) {
 			// #6166
 			result = path;
-			result.flat = true;
+			result.isFlat = true;
 		} else {
 			// Go over each subpath
 			for (i = 0; i < path.length; i += 6) {

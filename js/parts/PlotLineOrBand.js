@@ -145,7 +145,7 @@ H.PlotLineOrBand.prototype = {
 
 		// the plot band/line label
 		if (optionsLabel && defined(optionsLabel.text) && path && path.length && 
-				axis.width > 0 && axis.height > 0 && !path.flat) {
+				axis.width > 0 && axis.height > 0 && !path.isFlat) {
 			// apply defaults
 			optionsLabel = merge({
 				align: horiz && isBand && 'center',
@@ -254,7 +254,7 @@ H.extend(Axis.prototype, /** @lends Highcharts.Axis.prototype */ {
 			
 			// Flat paths don't need labels (#3836)
 			if (outside) {
-				path.flat = path.toString() === toPath.toString();
+				path.isFlat = path.toString() === toPath.toString();
 				plus = 0;
 			}
 
